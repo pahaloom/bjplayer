@@ -38,4 +38,21 @@ public class GameTest {
         g.player.currentHand.add(Card.parse("HA"));
         assertEquals(6, g.calculateWin());
     }
+
+    @Test
+    public void testSplittedDoubled21() {
+        Game g = new Game(null);
+        g.dealerHand.add(Card.parse("H10"));
+        g.dealerHand.add(Card.parse("D7"));
+        g.player.initialBet = 2;
+        g.player.totalBet = 8;
+        g.player.currentHand.setCanDouble(false);
+        g.player.currentHand.add(Card.parse("H10"));
+        g.player.currentHand.add(Card.parse("HA"));
+        g.player.currentHand = g.player.splitHand = new Hand();
+        g.player.currentHand.setCanDouble(false);
+        g.player.currentHand.add(Card.parse("H10"));
+        g.player.currentHand.add(Card.parse("HA"));
+        assertEquals(12, g.calculateWin());
+    }
 }
