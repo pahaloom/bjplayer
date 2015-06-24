@@ -65,23 +65,25 @@ public class Game {
         }
 
         int dlSum = dealerHand.getBJSum();
+        int handBet = plHand.canDouble() ? player.initialBet : player.initialBet * 2;
 
         if (plHand.size() == 2 && plSum == 21) {
             // Natural
             if (dlSum == 21 && dealerHand.size() == 2) {
                 // Push
-                return player.initialBet;
+                return handBet;
             } else {
                 // Player wins
-                return player.initialBet * 3 / 2;
+                return handBet * 3 / 2;
             }
         }
 
-        int handBet = plHand.canDouble() ? player.initialBet : player.initialBet * 2;
         if (dlSum > 21 || plSum > dlSum) {
+            // Player wins
             return handBet * 3 / 2;
         }
         if (plSum == dlSum) {
+            // Push
             return handBet;
         }
         return 0;
