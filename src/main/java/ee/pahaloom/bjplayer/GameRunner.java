@@ -22,11 +22,11 @@ class GameRunner {
         totalWin += game.calculateWin();
     }
 
-    public static void play() {
+    public static void play(int iterations, IPlayerStrategy playerStrategy) {
         Shoe shoe = new Shoe(6);
         shoe.shuffle();
-        GameRunner runner = new GameRunner(new BasicStrategy());
-        for (int i = 0; i < 1000000; i++) {
+        GameRunner runner = new GameRunner(playerStrategy);
+        for (int i = 0; i < iterations; i++) {
             runner.runGame(shoe);
             if ((float) shoe.getIndex() / (float) shoe.getSize() > 0.8F) {
                 // 80% of shoe played
@@ -34,7 +34,9 @@ class GameRunner {
                 shoe.reset();
             }
         }
-        System.out.printf("Done: %d %d %.5f%n\n"
+        System.out.printf("Done %d %-20s: %d %d %.5f%n"
+            , iterations
+            , playerStrategy.getClass().getSimpleName()
             , runner.totalBet
             , runner.totalWin
             , (double) runner.totalWin / (double) runner.totalBet);
