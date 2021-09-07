@@ -1,5 +1,5 @@
 plugins {
-	id 'java-library'
+	id 'application'
 }
 
 dependencies {
@@ -15,5 +15,17 @@ test {
 	useJUnitPlatform {
 		includeTags 'fast'
 		excludeTags 'slow'
+	}
+}
+
+application {
+	mainClass = 'ee.pahaloom.bjplayer.Main'
+}
+
+jar {
+	manifest {
+		attributes	'Implementation-Title': 'BlackJack Player',
+			'Implementation-Version': '0.0.1-SNAPSHOT',
+			'Main-Class': 'ee.pahaloom.bjplayer.Main'
 	}
 }
