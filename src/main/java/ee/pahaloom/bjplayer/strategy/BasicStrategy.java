@@ -3,18 +3,15 @@ package ee.pahaloom.bjplayer.strategy;
 import ee.pahaloom.bjplayer.Card;
 import ee.pahaloom.bjplayer.Hand;
 import ee.pahaloom.bjplayer.Move;
-import static ee.pahaloom.bjplayer.Move.D;
-import static ee.pahaloom.bjplayer.Move.DS;
-import static ee.pahaloom.bjplayer.Move.H;
-import static ee.pahaloom.bjplayer.Move.P;
-import static ee.pahaloom.bjplayer.Move.S;
+
+import static ee.pahaloom.bjplayer.Move.*;
 
 /**
  * Basic strategy
- *
+ * <p>
  * 6 decks, S17, DAS, No Surrender, No Peek
  * Estimated casino edge for these rules: 0.55 %
- *
+ * <p>
  * https://www.blackjackinfo.com/blackjack-basic-strategy-engine/?numdecks=6&soft17=s17&dbl=all&das=yes&surr=ns&peek=no
  *
  * @author Ploom
@@ -87,7 +84,7 @@ public class BasicStrategy implements IPlayerStrategy {
                 return 9;
             default:
                 // Should never happen
-                throw new IllegalArgumentException("Unknown card cank: " + rank);
+                throw new IllegalArgumentException("Unknown card rank: " + rank);
         }
     }
 
@@ -111,7 +108,7 @@ public class BasicStrategy implements IPlayerStrategy {
                 return 10;
             default:
                 // Should never happen
-                throw new IllegalArgumentException("Unknown card cank: " + rank);
+                throw new IllegalArgumentException("Unknown card rank: " + rank);
         }
     }
 

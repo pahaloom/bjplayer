@@ -1,8 +1,6 @@
 package ee.pahaloom.bjplayer;
 
 import ee.pahaloom.bjplayer.strategy.BasicStrategy;
-import ee.pahaloom.bjplayer.strategy.DealerStrategy;
-import ee.pahaloom.bjplayer.strategy.SimpleStrategy;
 
 public class Main {
     /**

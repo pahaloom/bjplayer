@@ -16,7 +16,7 @@ import ee.pahaloom.bjplayer.Move;
  * where playerScore = handScore playerHand
  * dealerScore = handScore [dealerVisibleCard]
  * </code>
- *
+ * <p>
  * Source: https://github.com/Wilfred/Blackjack/blob/master/Blackjack.hs
  *
  * @author Ploom
@@ -29,7 +29,7 @@ public class SimpleStrategy implements IPlayerStrategy {
     }
 
     private static int dealerScore(Card.Rank rank) {
-        switch(rank) {
+        switch (rank) {
             case ACE:
                 return 11;
             case TWO:
@@ -48,7 +48,7 @@ public class SimpleStrategy implements IPlayerStrategy {
                 return 10;
             default:
                 // Should never happen
-                throw new IllegalArgumentException("Unknown card cank: " + rank);
+                throw new IllegalArgumentException("Unknown card rank: " + rank);
         }
     }
 

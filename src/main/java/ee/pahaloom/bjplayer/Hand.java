@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * BlackJack hand
- * 
+ *
  * @author Ploom
  */
 public class Hand implements Iterable<Card> {
@@ -15,7 +15,8 @@ public class Hand implements Iterable<Card> {
     private boolean canDouble = true;
     private boolean isSplittable = true;
 
-    public Hand() {}
+    public Hand() {
+    }
 
     public Hand(Card[] initialCards) {
         for (Card c : initialCards) {
@@ -65,7 +66,7 @@ public class Hand implements Iterable<Card> {
                     break;
             }
         }
-        for (int i = 0 ; i < numAces ; i++) {
+        for (int i = 0; i < numAces; i++) {
             if (sum > 21) {
                 sum -= 10;
             }

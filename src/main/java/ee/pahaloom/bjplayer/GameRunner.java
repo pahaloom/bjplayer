@@ -1,9 +1,7 @@
 package ee.pahaloom.bjplayer;
 
 import ee.pahaloom.bjplayer.strategy.BasicStrategy;
-import ee.pahaloom.bjplayer.strategy.DealerStrategy;
 import ee.pahaloom.bjplayer.strategy.IPlayerStrategy;
-import ee.pahaloom.bjplayer.strategy.SimpleStrategy;
 
 class GameRunner {
     long totalBet = 0, totalWin = 0;
@@ -36,8 +34,9 @@ class GameRunner {
                 shoe.reset();
             }
         }
-        System.out.println(String.format("%d %d %.5f", runner.totalBet
-                , runner.totalWin
-                , (double) runner.totalWin / (double) runner.totalBet));
+        System.out.printf("Done: %d %d %.5f%n\n"
+            , runner.totalBet
+            , runner.totalWin
+            , (double) runner.totalWin / (double) runner.totalBet);
     }
 }
