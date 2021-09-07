@@ -2,6 +2,7 @@ package ee.pahaloom.bjplayer;
 
 /**
  * Card. Immutable.
+ *
  * @author Ploom
  */
 public class Card {
@@ -15,10 +16,9 @@ public class Card {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder();
-        b.append(suit);
-        b.append(rank);
-        return b.toString();
+        return ""
+            + suit
+            + rank;
     }
 
     public Suit getSuit() {

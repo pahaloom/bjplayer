@@ -3,9 +3,10 @@ package ee.pahaloom.bjplayer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 /**
  * Card shoe containing number of decks.
- * 
+ *
  * @author Ploom
  */
 public class Shoe {
@@ -25,7 +26,7 @@ public class Shoe {
 
     public void init(int numDecks) {
         cards = new ArrayList<>(numDecks * Card.Suit.values().length * Card.Rank.values().length);
-        for (int n = 0 ; n < numDecks ; n++) {
+        for (int n = 0; n < numDecks; n++) {
             for (Card.Suit s : Card.Suit.values()) {
                 for (Card.Rank r : Card.Rank.values()) {
                     cards.add(new Card(s, r));

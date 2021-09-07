@@ -12,8 +12,8 @@ class Player {
 
     Hand currentHand = playerHand;
 
-    int initialBet = 1;
-    int totalBet = initialBet;
+    int initialBet;
+    int totalBet;
 
     public Player(int initialBet) {
         this.initialBet = initialBet;

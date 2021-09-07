@@ -9,5 +9,5 @@ import ee.pahaloom.bjplayer.Move;
  * @author Ploom
  */
 public interface IPlayerStrategy {
-    public Move nextMove(Hand dealerHand, Hand playerHand);
+    Move nextMove(Hand dealerHand, Hand playerHand);
 }

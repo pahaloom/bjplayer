@@ -1,0 +1,15 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+insert_final_newline = true
+
+[*.java]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+# Tab indentation (no size specified)
+[*.gradle]
+indent_style = tab
+indent_size = 2

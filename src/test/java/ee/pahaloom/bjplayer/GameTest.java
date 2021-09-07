@@ -1,19 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ee.pahaloom.bjplayer;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ * Testing the Game class.
  *
  * @author Ploom
  */
+@Tag("fast")
 public class GameTest {
-    
+
     public GameTest() {
     }
 
