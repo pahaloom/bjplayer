@@ -2,7 +2,15 @@
 
 A BlackJack playing experiment.
 
-`Usage: Main [rounds] [iterations]`
+```
+Usage: Main [-v] [rounds] [iterations]
+
+By default 10 rounds of 1000000 BlackJack games will be played using different strategies.
+Output will contain total bet amount, win amount and win percentage.
+
+Optionally -v will enable verbose output to stderr.
+Giving -h or --help as first argument will result displaying usage instructions.
+```
 
 Without arguments Main class will run 10 rounds of 1000000 iterations with each strategy.
 

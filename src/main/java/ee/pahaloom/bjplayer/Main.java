@@ -4,6 +4,7 @@ import ee.pahaloom.bjplayer.strategy.BasicStrategy;
 import ee.pahaloom.bjplayer.strategy.IPlayerStrategy;
 import ee.pahaloom.bjplayer.strategy.SimpleStrategy;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.*;
@@ -15,10 +16,12 @@ public class Main {
     private static Tasker TASK_BUILDER = Tasker.SILENT;
 
     public static void usage(int status) {
-        System.out.println("Usage: " + Main.class.getSimpleName() + " [-v] [rounds] [iterations]");
-        System.out.println("By default " + DEFAULT_ROUNDS + " rounds of " + DEFAULT_ITERATIONS + " BlackJack games will be played using different strategies");
-        System.out.println("Output will contain total bet amount, win amount and win percentage");
-        System.out.println("Optionally -v will enable verbose output to stderr");
+        var out = System.out;
+        out.printf("Usage: %s [-v] [rounds] [iterations]%n%n", Main.class.getSimpleName());
+        out.printf("By default %d rounds of %d BlackJack games will be played using different strategies%n", DEFAULT_ROUNDS, DEFAULT_ITERATIONS);
+        out.printf("Output will contain total bet amount, win amount and win percentage.%n%n");
+        out.println("Optionally -v will enable verbose output to stderr.");
+        out.println("Giving -h or --help as first argument will result displaying usage instructions.");
         System.exit(status);
     }
 
